@@ -2,7 +2,7 @@
 
 Structured writeups of OffSec Proving Grounds Play machines — all sourced from VulnHub and hosted on the OffSec platform. Documented with full enumeration, exploitation, and privilege escalation steps.
 
-![Status](https://img.shields.io/badge/Status-Active-brightgreen) ![Machines](https://img.shields.io/badge/Machines_Rooted-3-blue) ![Platform](https://img.shields.io/badge/Platform-PG_Play-orange) ![Focus](https://img.shields.io/badge/Focus-OSCP_Prep-darkred)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen) ![Machines](https://img.shields.io/badge/Machines_Rooted-4-blue) ![Platform](https://img.shields.io/badge/Platform-PG_Play-orange) ![Focus](https://img.shields.io/badge/Focus-OSCP_Prep-darkred)
 
 *Full process documented — recon to root, including what failed and why.*
 
@@ -15,6 +15,7 @@ Structured writeups of OffSec Proving Grounds Play machines — all sourced from
 | [Katana](./KATANA) | Linux (Debian) | Easy | SunCSR Team | Web enumeration, CMS default creds, file upload bypass, Python capabilities privesc |
 | [DC-1](./DC-1) | Linux (Debian) | Easy | DCAU | Drupal CMS, Drupalgeddon2, SUID exploitation |
 | [DC-2](./DC-2) | Linux (Debian) | Easy | DCAU | WordPress, WPScan, CeWL, rbash escape, sudo git |
+| [Inclusiveness](./INCLUSIVENESS) | Easy | h4sh5 & Richard Lee | LFI, FTP, PATH hijacking, SUID |
 
 ---
 
@@ -70,6 +71,16 @@ A follow-up to DC-1, also beginner-friendly. Runs **WordPress** on Apache. Requi
 
 ---
 
+### Inclusiveness
+
+A beginner-to-intermediate boot2root machine centered around web enumeration and Local File Inclusion (LFI). Initial access requires identifying a hidden robots.txt by spoofing a Googlebot user agent, discovering an LFI-vulnerable lang parameter, and leveraging anonymous FTP write access to upload a PHP webshell. The uploaded shell is then executed via the LFI parameter to achieve remote code execution. Privilege escalation exploits a PATH hijacking vulnerability in a SUID binary that calls whoami without an absolute path.
+
+- **Ports:**  21 (FTP - anonymous write access), 22 (SSH), 80 (HTTP - Apache, robots.txt, LFI)
+- **Exploit:**  Googlebot user agent → robots.txt → LFI via ?lang= parameter → FTP webshell upload → RCE as www-data
+- **PrivEsc:** rootshell binary calls whoami without absolute path → fake whoami in /tmp → PATH hijack → root shell
+
+---
+
 ## 📌 About PG Play
 
 OffSec Proving Grounds Play is a **free** lab platform by Offensive Security. All machines are sourced from the VulnHub community and hosted on the OffSec platform — meaning no local VM setup required, just VPN in and hack.
@@ -109,6 +120,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 | [Katana](./KATANA) | Easy | File upload, Python capabilities |
 | [DC-1](./DC-1) | Easy | Drupalgeddon2, SUID find |
 | [DC-2](./DC-2) | Easy | WPScan, CeWL, rbash, sudo git |
+| [Inclusiveness](./INCLUSIVENESS) | Easy | LFI, FTP, PATH hijacking, SUID |
 
 ---
 
@@ -116,7 +128,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 
 | Machine | Difficulty | Status | Key Focus |
 |---------|------------|--------|-----------|
-| Inclusiveness | Easy | ⏳ Pending | LFI, FTP, user agent bypass |
+| [Inclusiveness](./INCLUSIVENESS) | Easy | ✅ Done | LFI, FTP, PATH hijacking, SUID |
 | FunboxRookie | Easy | ⏳ Pending | ZIP cracking, rbash escape |
 | JISCTF | Easy | ⏳ Pending | File upload bypass |
 | Gaara | Easy | ⏳ Pending | Enumeration, privesc |
