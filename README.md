@@ -147,7 +147,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 
 ---
 
-### 🔴 Phase 3 
+### 🔴 Phase 3 — Active Directory
 
 | Machine | Difficulty | Status | Key Focus |
 |---------|------------|--------|-----------|
