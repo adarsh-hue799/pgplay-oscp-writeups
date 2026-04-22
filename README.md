@@ -100,53 +100,76 @@ OffSec Proving Grounds Play is a **free** lab platform by Offensive Security. Al
 
 ## 🗺️ Roadmap
 
-Machines I plan to work through (all 49 from the official OffSec walkthrough playlist):
+Working through 32 machines from the official OffSec PG Play playlist (49 total — 12 skipped as too similar to previously completed machines, 5 excluded as newer additions):
 
-| Machine | Status |
-|---------|--------|
-| Katana | ✅ Done |
-| DC-1 | ✅ Done |
-| DC-2 | ✅ Done |
-| DC-4 | ⏳ Pending |
-| DC-6 | ⏳ Pending |
-| DC-9 | ⏳ Pending |
-| BBSCute | ⏳ Pending |
-| Blogger1 | ⏳ Pending |
-| Born2root | ⏳ Pending |
-| BossPlayersCTF | ⏳ Pending |
-| BTRSys2.1 | ⏳ Pending |
-| Covfefe | ⏳ Pending |
-| Dawn | ⏳ Pending |
-| Dawn2 | ⏳ Pending |
-| Election1 | ⏳ Pending |
-| EvilBox-One | ⏳ Pending |
-| FunBox | ⏳ Pending |
-| FunBoxEasy | ⏳ Pending |
-| FunBoxEasyEnum | ⏳ Pending |
-| FunboxRookie | ⏳ Pending |
-| Gaara | ⏳ Pending |
-| Geisha | ⏳ Pending |
-| GlasgowSmile | ⏳ Pending |
-| HackerFest2019 | ⏳ Pending |
-| ICMP | ⏳ Pending |
-| Inclusiveness | ⏳ Pending |
-| JISCTF | ⏳ Pending |
-| LemonSqueezy | ⏳ Pending |
-| My-CMSMS | ⏳ Pending |
-| NoName | ⏳ Pending |
-| OnSystemShellDredd | ⏳ Pending |
-| Photographer | ⏳ Pending |
-| Potato | ⏳ Pending |
-| PyExp | ⏳ Pending |
-| Samurai | ⏳ Pending |
-| Seppuku | ⏳ Pending |
-| SoSimple | ⏳ Pending |
-| SunsetDecoy | ⏳ Pending |
-| SunsetMidnight | ⏳ Pending |
-| SunsetNoontide | ⏳ Pending |
-| SunsetTwilight | ⏳ Pending |
-| Tre | ⏳ Pending |
-| Wpwn | ⏳ Pending |
+### ✅ Completed (3/32)
+
+| Machine | Difficulty | Key Techniques |
+|---------|------------|----------------|
+| [Katana](./KATANA) | Easy | File upload, Python capabilities |
+| [DC-1](./DC-1) | Easy | Drupalgeddon2, SUID find |
+| [DC-2](./DC-2) | Easy | WPScan, CeWL, rbash, sudo git |
+
+---
+
+### 🟢 Phase 1 
+
+| Machine | Difficulty | Status | Key Focus |
+|---------|------------|--------|-----------|
+| Inclusiveness | Easy | ⏳ Pending | LFI, FTP, user agent bypass |
+| FunboxRookie | Easy | ⏳ Pending | ZIP cracking, rbash escape |
+| JISCTF | Easy | ⏳ Pending | File upload bypass |
+| Gaara | Easy | ⏳ Pending | Enumeration, privesc |
+| Geisha | Easy | ⏳ Pending | Web enumeration |
+| NoName | Easy | ⏳ Pending | Web exploitation |
+| Wpwn | Easy | ⏳ Pending | WordPress, privesc chain |
+| BBSCute | Easy | ⏳ Pending | BBS exploitation |
+| EvilBox-One | Easy | ⏳ Pending | Web, chaining techniques |
+| Dawn | Easy | ⏳ Pending | Service exploitation |
+
+---
+
+### 🟡 Phase 2
+
+| Machine | Difficulty | Status | Key Focus |
+|---------|------------|--------|-----------|
+| SoSimple | Intermediate | ⏳ Pending | Social Warfare RCE |
+| Tre | Intermediate | ⏳ Pending | Adminer, cron job abuse |
+| SunsetMidnight | Intermediate | ⏳ Pending | MySQL credential abuse |
+| Born2Root | Intermediate | ⏳ Pending | SSH key exploitation |
+| Photographer | Intermediate | ⏳ Pending | KOKEN CMS exploitation |
+| Blogger1 | Intermediate | ⏳ Pending | WordPress exploitation |
+| Election1 | Intermediate | ⏳ Pending | PHP exploitation |
+| LemonSqueezy | Intermediate | ⏳ Pending | WordPress, privilege abuse |
+| PyExp | Intermediate | ⏳ Pending | Python exploitation |
+| My-CMSMS | Intermediate | ⏳ Pending | CMS exploitation |
+| OnSystemShellDredd | Intermediate | ⏳ Pending | Advanced exploitation |
+
+---
+
+### 🔴 Phase 3 
+
+| Machine | Difficulty | Status | Key Focus |
+|---------|------------|--------|-----------|
+| DC-4 | Intermediate | ⏳ Pending | Command injection |
+| DC-6 | Intermediate | ⏳ Pending | WordPress, advanced privesc |
+| DC-9 | Intermediate | ⏳ Pending | SQLi, port knocking |
+| Seppuku | Hard | ⏳ Pending | Complex chaining |
+| Samurai | Hard | ⏳ Pending | Advanced techniques |
+| ICMP | Hard | ⏳ Pending | Networking, deep exploitation |
+| Potato | Hard | ⏳ Pending | Advanced privesc |
+| GlasgowSmile | Hard | ⏳ Pending | Hard difficulty chaining |
+| Dawn2 | Hard | ⏳ Pending | Advanced service exploitation |
+| BTRSys2.1 | Intermediate | ⏳ Pending | Multi-vector attack |
+| BossPlayersCTF | Easy | ⏳ Pending | CTF techniques |
+| SunsetDecoy | Intermediate | ⏳ Pending | Hash cracking, chkrootkit |
+| SunsetNoontide | Intermediate | ⏳ Pending | Web exploitation |
+| SunsetTwilight | Intermediate | ⏳ Pending | Advanced chaining |
+| Covfefe | Intermediate | ⏳ Pending | Service exploitation |
+| HackerFest2019 | Intermediate | ⏳ Pending | CTF techniques |
+| FunBox | Easy | ⏳ Pending | WordPress, FTP |
+| FunBoxEasy | Easy | ⏳ Pending | Basic exploitation |
+| FunBoxEasyEnum | Easy | ⏳ Pending | Enumeration focus |
 
 ---
 
