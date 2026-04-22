@@ -15,7 +15,7 @@ Structured writeups of OffSec Proving Grounds Play machines — all sourced from
 | [Katana](./KATANA) | Linux (Debian) | Easy | SunCSR Team | Web enumeration, CMS default creds, file upload bypass, Python capabilities privesc |
 | [DC-1](./DC-1) | Linux (Debian) | Easy | DCAU | Drupal CMS, Drupalgeddon2, SUID exploitation |
 | [DC-2](./DC-2) | Linux (Debian) | Easy | DCAU | WordPress, WPScan, CeWL, rbash escape, sudo git |
-| [Inclusiveness](./INCLUSIVENESS) | Easy | h4sh5 & Richard Lee | LFI, FTP, PATH hijacking, SUID |
+| [Inclusiveness](./INCLUSIVENESS) | Linux (Debian) | Easy |  h4sh5 & Richard Lee | LFI, FTP, PATH hijacking, SUID |
 
 ---
 
