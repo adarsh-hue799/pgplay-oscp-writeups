@@ -15,7 +15,8 @@ Structured writeups of OffSec Proving Grounds Play machines — all sourced from
 | [Katana](./KATANA) | Linux (Debian) | Easy | SunCSR Team | Web enumeration, CMS default creds, file upload bypass, Python capabilities privesc |
 | [DC-1](./DC-1) | Linux (Debian) | Easy | DCAU | Drupal CMS, Drupalgeddon2, SUID exploitation |
 | [DC-2](./DC-2) | Linux (Debian) | Easy | DCAU | WordPress, WPScan, CeWL, rbash escape, sudo git |
-| [Inclusiveness](./INCLUSIVENESS) | Linux (Debian) | Easy |  h4sh5 & Richard Lee | LFI, FTP, PATH hijacking, SUID |
+| [Inclusiveness](./INCLUSIVENESS) | Linux (Debian) | Easy | h4sh5 & Richard Lee | LFI, FTP, PATH hijacking, SUID |
+| [Funbox: Rookie](./FUNBOXROOKIE) | Linux (Debian) | Easy | 0815R2d2 | ZIP cracking, rbash escape |
 
 ---
 
@@ -81,6 +82,16 @@ A beginner-to-intermediate boot2root machine centered around web enumeration and
 
 ---
 
+### Funbox: Rookie
+
+A beginner-friendly boot2root machine focused on credential discovery and restricted shell escape. Initial access involves anonymous FTP login to download multiple password-protected ZIP files, cracking them with fcrackzip and zip2john, and reusing discovered credentials to SSH into the machine as a restricted user. Privilege escalation achieved by discovering root credentials in a plaintext file within the user's home directory.
+
+- **Ports:**  21 (FTP - anonymous login), 22 (SSH), 80 (HTTP - Apache default page)
+- **Exploit:**  Anonymous FTP → download password protected ZIP files → crack with zip2john + John the Ripper → credential reuse for SSH access
+- **PrivEsc:** Plaintext root credentials found in home directory file (.mysql_history) → su root → root shell
+
+---
+
 ## 📌 About PG Play
 
 OffSec Proving Grounds Play is a **free** lab platform by Offensive Security. All machines are sourced from the VulnHub community and hosted on the OffSec platform — meaning no local VM setup required, just VPN in and hack.
@@ -121,6 +132,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 | [DC-1](./DC-1) | Easy | Drupalgeddon2, SUID find |
 | [DC-2](./DC-2) | Easy | WPScan, CeWL, rbash, sudo git |
 | [Inclusiveness](./INCLUSIVENESS) | Easy | LFI, FTP, PATH hijacking, SUID |
+| [Funbox: Rookie](./FUNBOXROOKIE) | Easy | ZIP crack, rbash escape |
 
 ---
 
@@ -129,7 +141,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 | Machine | Difficulty | Status | Key Focus |
 |---------|------------|--------|-----------|
 | [Inclusiveness](./INCLUSIVENESS) | Easy | ✅ Done | LFI, FTP, PATH hijacking, SUID |
-| FunboxRookie | Easy | ⏳ Pending | ZIP cracking, rbash escape |
+| [Funbox: Rookie](./FUNBOXROOKIE) | Easy | ✅ Done | ZIP cracking, rbash escape |
 | JISCTF | Easy | ⏳ Pending | File upload bypass |
 | Gaara | Easy | ⏳ Pending | Enumeration, privesc |
 | Geisha | Easy | ⏳ Pending | Web enumeration |
