@@ -1,0 +1,5 @@
+::: page
+# FUNBOXROOKIE {#funboxrookie .title}
+
+\
+:::
