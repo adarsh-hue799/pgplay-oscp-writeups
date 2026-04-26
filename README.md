@@ -2,7 +2,7 @@
 
 Structured writeups of OffSec Proving Grounds Play machines — all sourced from VulnHub and hosted on the OffSec platform. Documented with full enumeration, exploitation, and privilege escalation steps.
 
-![Status](https://img.shields.io/badge/Status-Active-brightgreen) ![Machines](https://img.shields.io/badge/Machines_Rooted-5-blue) ![Platform](https://img.shields.io/badge/Platform-PG_Play-orange) ![Focus](https://img.shields.io/badge/Focus-OSCP_Prep-darkred)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen) ![Machines](https://img.shields.io/badge/Machines_Rooted-6-blue) ![Platform](https://img.shields.io/badge/Platform-PG_Play-orange) ![Focus](https://img.shields.io/badge/Focus-OSCP_Prep-darkred)
 
 *Full process documented — recon to root, including what failed and why.*
 
@@ -17,6 +17,7 @@ Structured writeups of OffSec Proving Grounds Play machines — all sourced from
 | [DC-2](./DC-2) | Linux (Debian) | Easy | DCAU | WordPress, WPScan, CeWL, rbash escape, sudo git |
 | [Inclusiveness](./INCLUSIVENESS) | Linux (Debian) | Easy | h4sh5 & Richard Lee | LFI, FTP, PATH hijacking, SUID |
 | [Funbox: Rookie](./FUNBOXROOKIE) | Linux (Debian) | Easy | 0815R2d2 | ZIP cracking, rbash escape |
+| [JIS_CTF](./JIS_CTF) | Linux (Debian) | Easy | Mohammad Khreesha | File upload bypass, Lateral movement |
 
 ---
 
@@ -92,6 +93,16 @@ A beginner-friendly boot2root machine focused on credential discovery and restri
 
 ---
 
+### JIS-CTF
+
+A beginner-friendly boot2root machine focused on web enumeration and file upload exploitation. Initial access requires thorough source code review to discover hidden credentials, followed by authenticating to a restricted web area and exploiting an unrestricted file upload functionality to upload a PHP reverse shell. Lateral movement involves manual file system enumeration to discover a plaintext credentials file leading to SSH access as a privileged user.
+
+- **Ports:**  22 (SSH), 80 (HTTP - Apache)
+- **Exploit:**  Source code review → hidden credentials in HTML comments → authenticated file upload → PHP reverse shell → www-data shell
+- **PrivEsc:** Manual enumeration → credentials.txt containing plaintext password → SSH as technawi → privileged user access and final flag
+
+---
+
 ## 📌 About PG Play
 
 OffSec Proving Grounds Play is a **free** lab platform by Offensive Security. All machines are sourced from the VulnHub community and hosted on the OffSec platform — meaning no local VM setup required, just VPN in and hack.
@@ -133,6 +144,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 | [DC-2](./DC-2) | Easy | WPScan, CeWL, rbash, sudo git |
 | [Inclusiveness](./INCLUSIVENESS) | Easy | LFI, FTP, PATH hijacking, SUID |
 | [Funbox: Rookie](./FUNBOXROOKIE) | Easy | ZIP crack, rbash escape |
+| [JIS_CTF](./JIS_CTF) | Easy | File upload bypass, Lateral movement |
 
 ---
 
@@ -142,7 +154,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 |---------|------------|--------|-----------|
 | [Inclusiveness](./INCLUSIVENESS) | Easy | ✅ Done | LFI, FTP, PATH hijacking, SUID |
 | [Funbox: Rookie](./FUNBOXROOKIE) | Easy | ✅ Done | ZIP cracking, rbash escape |
-| JISCTF | Easy | ⏳ Pending | File upload bypass |
+| JISCTF | Easy | ✅ Done | File upload bypass |
 | Gaara | Easy | ⏳ Pending | Enumeration, privesc |
 | Geisha | Easy | ⏳ Pending | Web enumeration |
 | NoName | Easy | ⏳ Pending | Web exploitation |
