@@ -154,7 +154,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 |---------|------------|--------|-----------|
 | [Inclusiveness](./INCLUSIVENESS) | Easy | ✅ Done | LFI, FTP, PATH hijacking, SUID |
 | [Funbox: Rookie](./FUNBOXROOKIE) | Easy | ✅ Done | ZIP cracking, rbash escape |
-| JISCTF | Easy | ✅ Done | File upload bypass |
+| [JIS_CTF](./JIS_CTF) | Easy | ✅ Done | File upload bypass |
 | Gaara | Easy | ⏳ Pending | Enumeration, privesc |
 | Geisha | Easy | ⏳ Pending | Web enumeration |
 | NoName | Easy | ⏳ Pending | Web exploitation |
