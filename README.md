@@ -157,7 +157,7 @@ OffSec Proving Grounds Play is a **free** lab platform by Offensive Security. Al
 
 Working through 32 machines from the official OffSec PG Play playlist (49 total — 12 skipped as too similar to previously completed machines, 5 excluded as newer additions):
 
-### ✅ Completed (3/32)
+### ✅ Completed (8/32)
 
 | Machine | Difficulty | Key Techniques |
 |---------|------------|----------------|
