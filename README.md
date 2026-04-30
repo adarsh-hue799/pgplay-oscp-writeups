@@ -2,7 +2,7 @@
 
 Structured writeups of OffSec Proving Grounds Play machines — all sourced from VulnHub and hosted on the OffSec platform. Documented with full enumeration, exploitation, and privilege escalation steps.
 
-![Status](https://img.shields.io/badge/Status-Active-brightgreen) ![Machines](https://img.shields.io/badge/Machines_Rooted-7-blue) ![Platform](https://img.shields.io/badge/Platform-PG_Play-orange) ![Focus](https://img.shields.io/badge/Focus-OSCP_Prep-darkred)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen) ![Machines](https://img.shields.io/badge/Machines_Rooted-8-blue) ![Platform](https://img.shields.io/badge/Platform-PG_Play-orange) ![Focus](https://img.shields.io/badge/Focus-OSCP_Prep-darkred)
 
 *Full process documented — recon to root, including what failed and why.*
 
@@ -19,6 +19,7 @@ Structured writeups of OffSec Proving Grounds Play machines — all sourced from
 | [Funbox: Rookie](./FUNBOXROOKIE) | Linux (Debian) | Easy | 0815R2d2 | ZIP cracking, rbash escape |
 | [JIS_CTF](./JIS_CTF) | Linux (Debian) | Easy | Mohammad Khreesha | File upload bypass, Lateral movement |
 | [Gaara](./GAARA) | Linux (Debian) | Easy | 0xJin | Enumeration, gdb privesc |
+| [So Simple](./SOSIMPLE) | Linux (Ubuntu) | Intermediate | roel | Social Warfare RCE |
 
 ---
 
@@ -114,6 +115,16 @@ A beginner-friendly boot2root machine focused on web enumeration and file upload
 
 ---
 
+### So Simple
+
+An intermediate boot2root machine running WordPress on Ubuntu with intentional rabbit holes. Initial enumeration reveals WordPress with user max — brute forcing credentials is a rabbit hole as the dashboard restricts shell uploads. The real attack path involves identifying Social Warfare plugin version 3.5.0 in page source, researching CVE-2019-9978, and manually crafting a Remote File Inclusion URL pointing to a hosted PHP payload to achieve RCE as www-data. Privilege escalation involves a multi-stage user chain across three accounts before reaching root.
+
+- **Ports:**  22 (SSH), 80 (HTTP - Apache, WordPress 5.4.2, Social Warfare 3.5.0)
+- **Exploit:**  CVE-2019-9978 (Social Warfare RFI) → manually crafted swp_url parameter pointing to hosted payload.txt → RCE as www-data → discovered hidden .ssh/id_rsa via LinPEAS → SSH as max
+- **PrivEsc:** sudo -l as max → run service as steven via GTFOBins → sudo -l as steven → write reverse shell to /opt/tools/server-health.sh → execute with sudo → root shell
+
+---
+
 ## 📌 About PG Play
 
 OffSec Proving Grounds Play is a **free** lab platform by Offensive Security. All machines are sourced from the VulnHub community and hosted on the OffSec platform — meaning no local VM setup required, just VPN in and hack.
@@ -157,6 +168,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 | [Funbox: Rookie](./FUNBOXROOKIE) | Easy | ZIP crack, rbash escape |
 | [JIS_CTF](./JIS_CTF) | Easy | File upload bypass, Lateral movement |
 | [Gaara](./GAARA) | Easy | Enumeration, gdb privesc |
+| [So Simple](./SOSIMPLE) | Intermediate | Social Warfare RCE |
 
 ---
 
@@ -181,7 +193,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 
 | Machine | Difficulty | Status | Key Focus |
 |---------|------------|--------|-----------|
-| SoSimple | Intermediate | ⏳ Pending | Social Warfare RCE |
+| [So Simple](./SOSIMPLE) | Intermediate | ✅ Done | Social Warfare RCE |
 | Tre | Intermediate | ⏳ Pending | Adminer, cron job abuse |
 | SunsetMidnight | Intermediate | ⏳ Pending | MySQL credential abuse |
 | Born2Root | Intermediate | ⏳ Pending | SSH key exploitation |
