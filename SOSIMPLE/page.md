@@ -1,0 +1,5 @@
+::: page
+# SOSIMPLE {#sosimple .title}
+
+\
+:::
