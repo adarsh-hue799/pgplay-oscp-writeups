@@ -2,7 +2,7 @@
 
 Structured writeups of OffSec Proving Grounds Play machines — all sourced from VulnHub and hosted on the OffSec platform. Documented with full enumeration, exploitation, and privilege escalation steps.
 
-![Status](https://img.shields.io/badge/Status-Active-brightgreen) ![Machines](https://img.shields.io/badge/Machines_Rooted-8-blue) ![Platform](https://img.shields.io/badge/Platform-PG_Play-orange) ![Focus](https://img.shields.io/badge/Focus-OSCP_Prep-darkred)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen) ![Machines](https://img.shields.io/badge/Machines_Rooted-9-blue) ![Platform](https://img.shields.io/badge/Platform-PG_Play-orange) ![Focus](https://img.shields.io/badge/Focus-OSCP_Prep-darkred)
 
 *Full process documented — recon to root, including what failed and why.*
 
@@ -20,6 +20,7 @@ Structured writeups of OffSec Proving Grounds Play machines — all sourced from
 | [JIS_CTF](./JIS_CTF) | Linux (Debian) | Easy | Mohammad Khreesha | File upload bypass, Lateral movement |
 | [Gaara](./GAARA) | Linux (Debian) | Easy | 0xJin | Enumeration, gdb privesc |
 | [So Simple](./SOSIMPLE) | Linux (Ubuntu) | Intermediate | roel | Social Warfare RCE |
+| [TRE: 1](./TRE) | Linux (Debian) | Intermediate | SunCSR Team | Adminer, cron job abuse |
 
 ---
 
@@ -125,6 +126,16 @@ An intermediate boot2root machine running WordPress on Ubuntu with intentional r
 
 ---
 
+### TRE: 1
+
+An intermediate boot2root machine with intentional rabbit holes including a decoy webpage. Initial enumeration reveals three open ports but all attack surface lies on port 80. Directory busting with a larger wordlist uncovers two critical endpoints — Adminer and MantisBT — while the SOL music page is a complete dead end. Enumerating MantisBT with ffuf reveals a config directory containing credentials that chain directly into database access and SSH. Privilege escalation abuses a writable cron job running every second, inserting a SUID bash binary to achieve root.
+
+- **Ports:**  22 (SSH), 80 (HTTP), 8082 (HTTP — decoy SOL music page, rabbit hole)
+- **Exploit:**  Directory bust with /usr/share/wordlists/dirb/big.txt → discovered adminer.php and mantisbt → ffuf enumeration of MantisBT → /mantisbt/config/a.txt → leaked database password → Adminer login → user table contains tre credentials → SSH as tre
+- **PrivEsc:** LinPEAS yields nothing → pspy64 reveals cron job executing every second on a writable script → inserted chmod u+s /bin/bash → triggered on next cron run → /bin/bash -p → root shell
+
+---
+
 ## 📌 About PG Play
 
 OffSec Proving Grounds Play is a **free** lab platform by Offensive Security. All machines are sourced from the VulnHub community and hosted on the OffSec platform — meaning no local VM setup required, just VPN in and hack.
@@ -169,6 +180,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 | [JIS_CTF](./JIS_CTF) | Easy | File upload bypass, Lateral movement |
 | [Gaara](./GAARA) | Easy | Enumeration, gdb privesc |
 | [So Simple](./SOSIMPLE) | Intermediate | Social Warfare RCE |
+| [TRE: 1](./TRE) | Intermediate | Adminer, cron job abuse |
 
 ---
 
@@ -194,7 +206,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 | Machine | Difficulty | Status | Key Focus |
 |---------|------------|--------|-----------|
 | [So Simple](./SOSIMPLE) | Intermediate | ✅ Done | Social Warfare RCE |
-| Tre | Intermediate | ⏳ Pending | Adminer, cron job abuse |
+| Tre | Intermediate | ✅ Done | Adminer, cron job abuse |
 | SunsetMidnight | Intermediate | ⏳ Pending | MySQL credential abuse |
 | Born2Root | Intermediate | ⏳ Pending | SSH key exploitation |
 | Photographer | Intermediate | ⏳ Pending | KOKEN CMS exploitation |
