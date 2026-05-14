@@ -168,7 +168,7 @@ OffSec Proving Grounds Play is a **free** lab platform by Offensive Security. Al
 
 Working through 32 machines from the official OffSec PG Play playlist (49 total — 12 skipped as too similar to previously completed machines, 5 excluded as newer additions):
 
-### ✅ Completed (8/32)
+### ✅ Completed (9/32)
 
 | Machine | Difficulty | Key Techniques |
 |---------|------------|----------------|
@@ -206,7 +206,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 | Machine | Difficulty | Status | Key Focus |
 |---------|------------|--------|-----------|
 | [So Simple](./SOSIMPLE) | Intermediate | ✅ Done | Social Warfare RCE |
-| Tre | Intermediate | ✅ Done | Adminer, cron job abuse |
+| [Tre: 1](./TRE) | Intermediate | ✅ Done | Adminer, cron job abuse |
 | SunsetMidnight | Intermediate | ⏳ Pending | MySQL credential abuse |
 | Born2Root | Intermediate | ⏳ Pending | SSH key exploitation |
 | Photographer | Intermediate | ⏳ Pending | KOKEN CMS exploitation |
