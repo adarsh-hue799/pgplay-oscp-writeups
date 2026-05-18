@@ -137,6 +137,16 @@ An intermediate boot2root machine with intentional rabbit holes including a deco
 
 ---
 
+### SUNSET: MIDNIGHT
+
+An intermediate boot2root machine running WordPress with an exposed MySQL port that becomes the primary attack vector. Initial enumeration reveals a WordPress site after domain resolution, with WPScan identifying an admin user. Direct SSH and WordPress brute force are bypassed entirely — the real path is through an unauthenticated MySQL root access on port 3306. Database manipulation allows WordPress admin takeover without cracking the hash, leading to RCE via a malicious plugin. Privilege escalation abuses a custom SUID binary with a relative path vulnerability — a clean PATH hijacking to root.
+
+- **Ports:**  22 (SSH), 80 (HTTP — WordPress after resolving sunset-midnight), 3306 (MySQL — MariaDB)
+- **Exploit:**  WPScan → identified admin user → MySQL root login confirmed via Hydra → accessed WordPress database → admin hash uncrackable → replaced hash with custom MD5 (admin) → WordPress admin login → malicious PHP reverse shell via plugin editor → navigated to uploads → caught reverse shell as www-data → found MySQL credentials in wp-config.php → su to jose
+- **PrivEsc:**     unknown SUID binary /usr/bin/status → executes service without absolute path → created malicious service file containing /bin/sh in /tmp → exported /tmp to PATH → executed /usr/bin/status → root shell
+
+---
+
 ## 📌 About PG Play
 
 OffSec Proving Grounds Play is a **free** lab platform by Offensive Security. All machines are sourced from the VulnHub community and hosted on the OffSec platform — meaning no local VM setup required, just VPN in and hack.
