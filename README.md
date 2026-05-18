@@ -2,7 +2,7 @@
 
 Structured writeups of OffSec Proving Grounds Play machines — all sourced from VulnHub and hosted on the OffSec platform. Documented with full enumeration, exploitation, and privilege escalation steps.
 
-![Status](https://img.shields.io/badge/Status-Active-brightgreen) ![Machines](https://img.shields.io/badge/Machines_Rooted-9-blue) ![Platform](https://img.shields.io/badge/Platform-PG_Play-orange) ![Focus](https://img.shields.io/badge/Focus-OSCP_Prep-darkred)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen) ![Machines](https://img.shields.io/badge/Machines_Rooted-10-blue) ![Platform](https://img.shields.io/badge/Platform-PG_Play-orange) ![Focus](https://img.shields.io/badge/Focus-OSCP_Prep-darkred)
 
 *Full process documented — recon to root, including what failed and why.*
 
@@ -21,6 +21,7 @@ Structured writeups of OffSec Proving Grounds Play machines — all sourced from
 | [Gaara](./GAARA) | Linux (Debian) | Easy | 0xJin | Enumeration, gdb privesc |
 | [So Simple](./SOSIMPLE) | Linux (Ubuntu) | Intermediate | roel | Social Warfare RCE |
 | [TRE: 1](./TRE) | Linux (Debian) | Intermediate | SunCSR Team | Adminer, cron job abuse |
+| [SUNSET: MIDNIGHT](./SUNSETMIDNIGHT) | Linux (Debian) | Intermediate | whitecr0wz | MySQL credential abuse |
 
 ---
 
@@ -168,7 +169,7 @@ OffSec Proving Grounds Play is a **free** lab platform by Offensive Security. Al
 
 Working through 32 machines from the official OffSec PG Play playlist (49 total — 12 skipped as too similar to previously completed machines, 5 excluded as newer additions):
 
-### ✅ Completed (9/32)
+### ✅ Completed (10/32)
 
 | Machine | Difficulty | Key Techniques |
 |---------|------------|----------------|
@@ -181,6 +182,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 | [Gaara](./GAARA) | Easy | Enumeration, gdb privesc |
 | [So Simple](./SOSIMPLE) | Intermediate | Social Warfare RCE |
 | [TRE: 1](./TRE) | Intermediate | Adminer, cron job abuse |
+| [SUNSET: MIDNIGHT](./SUNSETMIDNIGHT) | Intermediate | MYSQL credential abuse |
 
 ---
 
@@ -207,7 +209,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 |---------|------------|--------|-----------|
 | [So Simple](./SOSIMPLE) | Intermediate | ✅ Done | Social Warfare RCE |
 | [Tre: 1](./TRE) | Intermediate | ✅ Done | Adminer, cron job abuse |
-| SunsetMidnight | Intermediate | ⏳ Pending | MySQL credential abuse |
+| [Sunset: Midnight](./SUNSETMIDNIGHT) | Intermediate | ✅ Done | MySQL credential abuse |
 | Born2Root | Intermediate | ⏳ Pending | SSH key exploitation |
 | Photographer | Intermediate | ⏳ Pending | KOKEN CMS exploitation |
 | Blogger1 | Intermediate | ⏳ Pending | WordPress exploitation |
