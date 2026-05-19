@@ -148,6 +148,16 @@ An intermediate boot2root machine running WordPress with an exposed MySQL port t
 
 ---
 
+### BORN2ROOT
+
+A beginner-intermediate boot2root with multiple user pivots and a fun final escalation. Port 80 hosts a static SecretSec company page exposing three staff names — useful for username enumeration later. Directory busting uncovers an icons directory containing a hidden .txt file with an RSA private key. SSH requires a legacy algorithm flag due to outdated server configuration. The machine chains through two rabbit holes — a cron job pivot to jimmy yields nothing — before the real path reveals itself: custom wordlist generation using bopscrk based on exposed staff names to brute force the final user, who reuses credentials for root.
+
+- **Ports:**   22 (SSH — legacy), 80 (HTTP — SecretSec static page), 111 (RPC), 57723 (RPC high port)
+- **Exploit:**   Directory bust → /icons/ directory → .txt file containing RSA private key → SSH as martin using -oHostKeyAlgorithms=+ssh-rsa legacy flag → enumerated cron job running as jimmy → abused writable cron job → reverse shell as jimmy → dead end, no privesc path
+- **PrivEsc:**     Identified staff names from port 80 → generated custom wordlist using bopscrk → brute forced SSH as hadi → credentials reused for su root → root shell
+
+---
+
 ## 📌 About PG Play
 
 OffSec Proving Grounds Play is a **free** lab platform by Offensive Security. All machines are sourced from the VulnHub community and hosted on the OffSec platform — meaning no local VM setup required, just VPN in and hack.
