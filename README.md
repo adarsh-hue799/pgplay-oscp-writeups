@@ -159,6 +159,16 @@ A beginner-intermediate boot2root with multiple user pivots and a fun final esca
 
 ---
 
+### Geisha: 1
+
+A beginner machine with several rabbit holes including a LiteSpeed web server that leads nowhere. Multiple ports expose different services but the real attack surface is a poorly secured HTTP port exposing the system /etc/passwd file directly. Username extracted from passwd, SSH password obtained via brute force, and privilege escalation abuses a non-standard SUID binary to read root's private key — a clean and straightforward chain once the noise is filtered out.
+
+- **Ports:**   Multiple open ports — LiteSpeed web server (rabbit hole), port 7125 (HTTP — exposes /etc/passwd directly)
+- **Exploit:**  Retrieved /etc/passwd from port 7125 → extracted username geisha → brute forced SSH password using Hydra → credentials: geisha:letmein → initial shell as geisha
+- **PrivEsc:**   Enumerated SUID binaries → found non-standard base32 with SUID bit set → used base32 to encode and read /root/.ssh/id_rsa → decoded and saved private key → SSH as root using stolen key → root shell
+
+---
+
 ## 📌 About PG Play
 
 OffSec Proving Grounds Play is a **free** lab platform by Offensive Security. All machines are sourced from the VulnHub community and hosted on the OffSec platform — meaning no local VM setup required, just VPN in and hack.
