@@ -191,7 +191,7 @@ OffSec Proving Grounds Play is a **free** lab platform by Offensive Security. Al
 
 Working through 32 machines from the official OffSec PG Play playlist (49 total — 12 skipped as too similar to previously completed machines, 5 excluded as newer additions):
 
-### ✅ Completed (11/32)
+### ✅ Completed (12/32)
 
 | Machine | Difficulty | Key Techniques |
 |---------|------------|----------------|
@@ -206,6 +206,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 | [TRE: 1](./TRE) | Intermediate | Adminer, cron job abuse |
 | [SUNSET: MIDNIGHT](./SUNSETMIDNIGHT) | Intermediate | MYSQL credential abuse |
 | [BORN2ROOT](./BORN2ROOT) | Intermediate | SSH key exploitation, cronjob abuse |
+| [Geisha: 1](./GEISHA) | Easy | Web Enumeration |
 
 ---
 
@@ -217,7 +218,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 | [Funbox: Rookie](./FUNBOXROOKIE) | Easy | ✅ Done | ZIP cracking, rbash escape |
 | [JIS_CTF](./JIS_CTF) | Easy | ✅ Done | File upload bypass |
 | [Gaara](./GAARA) | Easy | ✅ Done | Enumeration, privesc |
-| Geisha | Easy | ⏳ Pending | Web enumeration |
+| [Geisha](./GEISHA) | Easy | ✅ Done | Web enumeration |
 | NoName | Easy | ⏳ Pending | Web exploitation |
 | Wpwn | Easy | ⏳ Pending | WordPress, privesc chain |
 | BBSCute | Easy | ⏳ Pending | BBS exploitation |
