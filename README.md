@@ -170,6 +170,16 @@ A beginner machine with several rabbit holes including a LiteSpeed web server th
 
 ---
 
+### Photographer
+
+A beginner-intermediate machine that rewards thorough enumeration across multiple services. SMB enumeration uncovers a readable share containing an internal email that leaks both a username and a password hint. Port 8000 runs a Koken CMS instance with an admin panel — credentials obtained directly from the SMB loot. Initial file upload bypass via extension manipulation fails, but a searchsploit-identified exploit combined with Burp Suite interception achieves RCE. Privilege escalation is clean — a non-standard SUID PHP binary exploited via GTFOBins.
+
+- **Ports:**   80 (HTTP — static, no findings), 139/445 (SMB), 8000 (HTTP — Koken CMS admin panel)
+- **Exploit:**  SMB enumeration → sambashare share → mailsent.txt leaks username daisa and password hint babygirl → Koken CMS login on port 8000 → file upload restricted to image extensions → .php.jpg upload caught but unexecutable → searchsploit Koken CMS exploit → Burp Suite intercept → changed extension from .php.jpg to .php → forwarded request → shell uploaded → navigated to upload location → triggered file → caught reverse shell as www-data
+- **PrivEsc:**   Enumerated SUID binaries → found php7.2 with SUID bit set → GTFOBins PHP SUID exploit → root shell
+
+---
+
 ## 📌 About PG Play
 
 OffSec Proving Grounds Play is a **free** lab platform by Offensive Security. All machines are sourced from the VulnHub community and hosted on the OffSec platform — meaning no local VM setup required, just VPN in and hack.
