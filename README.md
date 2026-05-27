@@ -2,7 +2,7 @@
 
 Structured writeups of OffSec Proving Grounds Play machines — all sourced from VulnHub and hosted on the OffSec platform. Documented with full enumeration, exploitation, and privilege escalation steps.
 
-![Status](https://img.shields.io/badge/Status-Active-brightgreen) ![Machines](https://img.shields.io/badge/Machines_Rooted-12-blue) ![Platform](https://img.shields.io/badge/Platform-PG_Play-orange) ![Focus](https://img.shields.io/badge/Focus-OSCP_Prep-darkred)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen) ![Machines](https://img.shields.io/badge/Machines_Rooted-13-blue) ![Platform](https://img.shields.io/badge/Platform-PG_Play-orange) ![Focus](https://img.shields.io/badge/Focus-OSCP_Prep-darkred)
 
 *Full process documented — recon to root, including what failed and why.*
 
@@ -24,6 +24,7 @@ Structured writeups of OffSec Proving Grounds Play machines — all sourced from
 | [SUNSET: MIDNIGHT](./SUNSETMIDNIGHT) | Linux (Debian) | Intermediate | whitecr0wz | MySQL credential abuse |
 | [BORN2ROOT](./BORN2ROOT) | Linux (Debian) | Intermediate | Hadi Mene | SSH key exploitation, cronjob abuse |
 | [Geisha: 1](./GEISHA) | Linux (Debian) | Easy | SunCSR Team | Web enumeration |
+| [Photographer](./PHOTOGRAPHER) | Linux (Ubuntu) | Intermediste | v1n1v131r4 | KOKEN CMS exploitation |
 
 ---
 
@@ -201,7 +202,7 @@ OffSec Proving Grounds Play is a **free** lab platform by Offensive Security. Al
 
 Working through 32 machines from the official OffSec PG Play playlist (49 total — 12 skipped as too similar to previously completed machines, 5 excluded as newer additions):
 
-### ✅ Completed (12/32)
+### ✅ Completed (13/32)
 
 | Machine | Difficulty | Key Techniques |
 |---------|------------|----------------|
@@ -217,6 +218,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 | [SUNSET: MIDNIGHT](./SUNSETMIDNIGHT) | Intermediate | MYSQL credential abuse |
 | [BORN2ROOT](./BORN2ROOT) | Intermediate | SSH key exploitation, cronjob abuse |
 | [Geisha: 1](./GEISHA) | Easy | Web Enumeration |
+| [Photographer](./PHOTOGRAPHER) | Intermediate | KOKEN CMS exploitation |
 
 ---
 
@@ -245,7 +247,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 | [Tre: 1](./TRE) | Intermediate | ✅ Done | Adminer, cron job abuse |
 | [Sunset: Midnight](./SUNSETMIDNIGHT) | Intermediate | ✅ Done | MySQL credential abuse |
 | [Born2Root](./BORN2ROOT) | Intermediate |  ✅ Done | SSH key exploitation |
-| Photographer | Intermediate | ⏳ Pending | KOKEN CMS exploitation |
+| [Photographer](./PHOTOGRAPHER) | Intermediate | ✅ Done | KOKEN CMS exploitation |
 | Blogger1 | Intermediate | ⏳ Pending | WordPress exploitation |
 | Election1 | Intermediate | ⏳ Pending | PHP exploitation |
 | LemonSqueezy | Intermediate | ⏳ Pending | WordPress, privilege abuse |
