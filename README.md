@@ -181,6 +181,16 @@ A beginner-intermediate machine that rewards thorough enumeration across multipl
 
 ---
 
+### DC-4
+
+A beginner-intermediate machine with a non-standard web brute force challenge and a multi-stage user pivot chain. Port 80 hosts an admin login page with no visible error messages — ruling out Hydra directly and requiring wfuzz with response filtering to identify valid credentials. The admin panel executes system commands, providing a clean path to RCE via Burp Suite parameter manipulation. Post-exploitation reveals a password list that drives the next pivot, followed by a mail-based credential leak, and a creative sudo privilege escalation using teehee to directly modify /etc/passwd.
+
+- **Ports:**   22 (SSH), 80 (HTTP — admin login panel)
+- **Exploit:**  Login page brute force — Burp and Hydra failed due to no error message, redirect to index.php → wfuzz with -hw 17 to filter baseline responses → password: happy → logged in → admin panel executing ls -l → intercepted POST request in Burp → replaced command with reverse shell payload → caught shell as www-data
+- **PrivEsc:**   Enumerated filesystem → found password list → identified 3 users → SSH brute force with Hydra → valid credentials for jim → checked /var/mail/jim → email contained plaintext password for charles → su charles → sudo -l reveals teehee with no password → GTFOBins: appended passwordless root user to /etc/passwd using teehee → su to new user → root shell
+
+---
+
 ## 📌 About PG Play
 
 OffSec Proving Grounds Play is a **free** lab platform by Offensive Security. All machines are sourced from the VulnHub community and hosted on the OffSec platform — meaning no local VM setup required, just VPN in and hack.
