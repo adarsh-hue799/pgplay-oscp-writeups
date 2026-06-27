@@ -2,7 +2,7 @@
 
 Structured writeups of OffSec Proving Grounds Play machines — all sourced from VulnHub and hosted on the OffSec platform. Documented with full enumeration, exploitation, and privilege escalation steps.
 
-![Status](https://img.shields.io/badge/Status-Active-brightgreen) ![Machines](https://img.shields.io/badge/Machines_Rooted-14-blue) ![Platform](https://img.shields.io/badge/Platform-PG_Play-orange) ![Focus](https://img.shields.io/badge/Focus-OSCP_Prep-darkred)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen) ![Machines](https://img.shields.io/badge/Machines_Rooted-15-blue) ![Platform](https://img.shields.io/badge/Platform-PG_Play-orange) ![Focus](https://img.shields.io/badge/Focus-OSCP_Prep-darkred)
 
 *Full process documented — recon to root, including what failed and why.*
 
@@ -24,8 +24,9 @@ Structured writeups of OffSec Proving Grounds Play machines — all sourced from
 | [SUNSET: MIDNIGHT](./SUNSETMIDNIGHT) | Linux (Debian) | Intermediate | whitecr0wz | MySQL credential abuse |
 | [BORN2ROOT](./BORN2ROOT) | Linux (Debian) | Intermediate | Hadi Mene | SSH key exploitation, cronjob abuse |
 | [Geisha: 1](./GEISHA) | Linux (Debian) | Easy | SunCSR Team | Web enumeration |
-| [Photographer](./PHOTOGRAPHER) | Linux (Ubuntu) | Intermediste | v1n1v131r4 | KOKEN CMS exploitation |
-| [DC-4](./DC-4) | Linux (Debian) | Intermediste | DCAU | Command Injection |
+| [Photographer](./PHOTOGRAPHER) | Linux (Ubuntu) | Intermediate | v1n1v131r4 | KOKEN CMS exploitation |
+| [DC-4](./DC-4) | Linux (Debian) | Intermediate | DCAU | Command Injection |
+| [NoName](./NoName) | Linux (Ubuntu) | Intermediate | haclabs | web exploitation |
 
 ---
 
@@ -223,7 +224,7 @@ OffSec Proving Grounds Play is a **free** lab platform by Offensive Security. Al
 
 Working through 32 machines from the official OffSec PG Play playlist (49 total — 12 skipped as too similar to previously completed machines, 5 excluded as newer additions):
 
-### ✅ Completed (14/32)
+### ✅ Completed (15/32)
 
 | Machine | Difficulty | Key Techniques |
 |---------|------------|----------------|
@@ -241,6 +242,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 | [Geisha: 1](./GEISHA) | Easy | Web Enumeration |
 | [Photographer](./PHOTOGRAPHER) | Intermediate | KOKEN CMS exploitation |
 | [DC-4](./DC-4) | Intermediate | Command Injection |
+| [NoName](./NoName) | Intermediate | Web exploitation |
 
 ---
 
@@ -253,7 +255,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 | [JIS_CTF](./JIS_CTF) | Easy | ✅ Done | File upload bypass |
 | [Gaara](./GAARA) | Easy | ✅ Done | Enumeration, privesc |
 | [Geisha](./GEISHA) | Easy | ✅ Done | Web enumeration |
-| NoName | Easy | ⏳ Pending | Web exploitation |
+| NoName | Easy | ✅ Done | Web exploitation |
 | Wpwn | Easy | ⏳ Pending | WordPress, privesc chain |
 | BBSCute | Easy | ⏳ Pending | BBS exploitation |
 | EvilBox-One | Easy | ⏳ Pending | Web, chaining techniques |
