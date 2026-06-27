@@ -255,7 +255,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 | [JIS_CTF](./JIS_CTF) | Easy | ✅ Done | File upload bypass |
 | [Gaara](./GAARA) | Easy | ✅ Done | Enumeration, privesc |
 | [Geisha](./GEISHA) | Easy | ✅ Done | Web enumeration |
-| NoName | Easy | ✅ Done | Web exploitation |
+| [NoName](./NoName) | Easy | ✅ Done | Web exploitation |
 | Wpwn | Easy | ⏳ Pending | WordPress, privesc chain |
 | BBSCute | Easy | ⏳ Pending | BBS exploitation |
 | EvilBox-One | Easy | ⏳ Pending | Web, chaining techniques |
