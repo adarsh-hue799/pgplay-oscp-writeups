@@ -192,6 +192,16 @@ A beginner-intermediate machine with a non-standard web brute force challenge an
 
 ---
 
+### NoName
+
+A beginner-to-intermediate machine with intentional misdirection and a steganography-based discovery path. Initial enumeration reveals only port 80 with a fake admin area designed to mislead. Directory brute forcing uncovers a hidden /admin directory containing four images and a passphrase in the source code. Steghide extracts a base64 encoded string from one of the images which decodes to superadmin.php — a ping utility vulnerable to command injection. The input filter blocks common reverse shell keywords so the payload is base64 encoded and executed via pipe and backtick operator to bypass the filter and catch a shell.
+
+- **Ports:**   80 (HTTP - Apache)
+- **Exploit:**  Directory enumeration → /admin → steghide image extraction → base64 decoded path → superadmin.php command injection → filter bypass via base64 encoded payload piped through backtick execution → reverse shell as www-data
+- **PrivEsc:**  SUID bit on /usr/bin/find → GTFOBins → root shell
+
+---
+
 ## 📌 About PG Play
 
 OffSec Proving Grounds Play is a **free** lab platform by Offensive Security. All machines are sourced from the VulnHub community and hosted on the OffSec platform — meaning no local VM setup required, just VPN in and hack.
