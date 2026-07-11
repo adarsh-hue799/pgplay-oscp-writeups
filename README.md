@@ -2,7 +2,7 @@
 
 Structured writeups of OffSec Proving Grounds Play machines — all sourced from VulnHub and hosted on the OffSec platform. Documented with full enumeration, exploitation, and privilege escalation steps.
 
-![Status](https://img.shields.io/badge/Status-Active-brightgreen) ![Machines](https://img.shields.io/badge/Machines_Rooted-15-blue) ![Platform](https://img.shields.io/badge/Platform-PG_Play-orange) ![Focus](https://img.shields.io/badge/Focus-OSCP_Prep-darkred)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen) ![Machines](https://img.shields.io/badge/Machines_Rooted-16-blue) ![Platform](https://img.shields.io/badge/Platform-PG_Play-orange) ![Focus](https://img.shields.io/badge/Focus-OSCP_Prep-darkred)
 
 *Full process documented — recon to root, including what failed and why.*
 
@@ -27,6 +27,7 @@ Structured writeups of OffSec Proving Grounds Play machines — all sourced from
 | [Photographer](./PHOTOGRAPHER) | Linux (Ubuntu) | Intermediate | v1n1v131r4 | KOKEN CMS exploitation |
 | [DC-4](./DC-4) | Linux (Debian) | Intermediate | DCAU | Command Injection |
 | [NoName](./NoName) | Linux (Ubuntu) | Intermediate | haclabs | web exploitation |
+| [Blogger-1](./BLOGGER) | Linux (Ubuntu) | Intermediate | TheHackersBrain | WordPress exploitation |
 
 ---
 
@@ -234,7 +235,7 @@ OffSec Proving Grounds Play is a **free** lab platform by Offensive Security. Al
 
 Working through 32 machines from the official OffSec PG Play playlist (49 total — 12 skipped as too similar to previously completed machines, 5 excluded as newer additions):
 
-### ✅ Completed (15/32)
+### ✅ Completed (16/32)
 
 | Machine | Difficulty | Key Techniques |
 |---------|------------|----------------|
@@ -253,6 +254,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 | [Photographer](./PHOTOGRAPHER) | Intermediate | KOKEN CMS exploitation |
 | [DC-4](./DC-4) | Intermediate | Command Injection |
 | [NoName](./NoName) | Intermediate | Web exploitation |
+| [Blogger-1](./BLOGGER) | Intermediate | WordPress exploitation |
 
 ---
 
@@ -282,7 +284,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 | [Sunset: Midnight](./SUNSETMIDNIGHT) | Intermediate | ✅ Done | MySQL credential abuse |
 | [Born2Root](./BORN2ROOT) | Intermediate |  ✅ Done | SSH key exploitation |
 | [Photographer](./PHOTOGRAPHER) | Intermediate | ✅ Done | KOKEN CMS exploitation |
-| Blogger1 | Intermediate | ⏳ Pending | WordPress exploitation |
+| Blogger1 | Intermediate | ✅ Done | WordPress exploitation |
 | Election1 | Intermediate | ⏳ Pending | PHP exploitation |
 | LemonSqueezy | Intermediate | ⏳ Pending | WordPress, privilege abuse |
 | PyExp | Intermediate | ⏳ Pending | Python exploitation |
