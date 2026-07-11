@@ -203,6 +203,17 @@ A beginner-to-intermediate machine with intentional misdirection and a steganogr
 
 ---
 
+### Blogger-1
+
+A beginner-to-intermediate machine running Ubuntu with a WordPress blog hidden inside a non-obvious directory path. Requires layered enumeration to discover he attack surface, plugin exploitation for initial access, credential decoding for lateral movement, and a creative tar wildcard injection for root.
+
+- **Ports:**   22 (SSH), 80 (HTTP — Apache, portfolio website)
+- **Exploit:**  Gobuster revealed /assets/fonts/blog/ containing a WordPress install. WPScan identified user and aggressive plugin scan found vulnerable wpDiscuz plugin. Bypassed file upload restriction by prepending GIF89a; to a PHP webshell — uploaded as fake image, triggered via URL for RCE as www-data.
+- **Lateral Movement:** /opt/.creds contained an encoded string — decoded using a GitHub tool — revealed credentials for user james. SSH'd in as james.
+- **PrivEsc:** LinPEAS identified a cron job running tar with a wildcard (*) on /home/james. Exploited tar checkpoint feature by creating two specially named files (--checkpoint=1 and --checkpoint-action=exec=run.sh) alongside  run.sh which copied /bin/bash to /tmp/rootbash with SUID bit set. Waited for cron execution — ran /tmp/rootbash -p for root shell.
+
+---
+
 ## 📌 About PG Play
 
 OffSec Proving Grounds Play is a **free** lab platform by Offensive Security. All machines are sourced from the VulnHub community and hosted on the OffSec platform — meaning no local VM setup required, just VPN in and hack.
