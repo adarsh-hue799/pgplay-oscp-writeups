@@ -284,7 +284,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 | [Sunset: Midnight](./SUNSETMIDNIGHT) | Intermediate | ✅ Done | MySQL credential abuse |
 | [Born2Root](./BORN2ROOT) | Intermediate |  ✅ Done | SSH key exploitation |
 | [Photographer](./PHOTOGRAPHER) | Intermediate | ✅ Done | KOKEN CMS exploitation |
-| Blogger1 | Intermediate | ✅ Done | WordPress exploitation |
+| [Blogger-1](./BLOGGER) | Intermediate | ✅ Done | WordPress exploitation |
 | Election1 | Intermediate | ⏳ Pending | PHP exploitation |
 | LemonSqueezy | Intermediate | ⏳ Pending | WordPress, privilege abuse |
 | PyExp | Intermediate | ⏳ Pending | Python exploitation |
