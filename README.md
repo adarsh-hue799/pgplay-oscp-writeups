@@ -293,7 +293,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 | [NoName](./NoName) | Easy | ✅ Done | Web exploitation |
 | Wpwn | Easy | ⏳ Pending | WordPress, privesc chain |
 | BBSCute | Easy | ⏳ Pending | BBS exploitation |
-| EvilBox-One | Easy | ✅ Done | Web, chaining techniques |
+| [EvilBox-One](./EVILBOX1) | Easy | ✅ Done | Web, chaining techniques |
 | Dawn | Easy | ⏳ Pending | Service exploitation |
 
 ---
