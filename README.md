@@ -2,7 +2,7 @@
 
 Structured writeups of OffSec Proving Grounds Play machines — all sourced from VulnHub and hosted on the OffSec platform. Documented with full enumeration, exploitation, and privilege escalation steps.
 
-![Status](https://img.shields.io/badge/Status-Active-brightgreen) ![Machines](https://img.shields.io/badge/Machines_Rooted-16-blue) ![Platform](https://img.shields.io/badge/Platform-PG_Play-orange) ![Focus](https://img.shields.io/badge/Focus-OSCP_Prep-darkred)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen) ![Machines](https://img.shields.io/badge/Machines_Rooted-17-blue) ![Platform](https://img.shields.io/badge/Platform-PG_Play-orange) ![Focus](https://img.shields.io/badge/Focus-OSCP_Prep-darkred)
 
 *Full process documented — recon to root, including what failed and why.*
 
@@ -28,6 +28,7 @@ Structured writeups of OffSec Proving Grounds Play machines — all sourced from
 | [DC-4](./DC-4) | Linux (Debian) | Intermediate | DCAU | Command Injection |
 | [NoName](./NoName) | Linux (Ubuntu) | Intermediate | haclabs | web exploitation |
 | [Blogger-1](./BLOGGER) | Linux (Ubuntu) | Intermediate | TheHackersBrain | WordPress exploitation |
+| [EvilBox-1](./EVILBOX1) | Linux (Debian) | Easy | Mowree | Web, chaining techniques |
 
 ---
 
@@ -214,6 +215,16 @@ A beginner-to-intermediate machine running Ubuntu with a WordPress blog hidden i
 
 ---
 
+### EvilBox:1
+
+A beginner-to-intermediate machine centered around file extension enumeration and LFI exploitation. Initial enumeration reveals a blank webpage with no visible content — standard directory wordlists return nothing. Adding the -x php flag to Gobuster uncovers evil.php, a blank page with a hidden ?command= parameter vulnerable to Local File Inclusion. Reading /etc/passwd reveals user mowree, whose SSH private key is extracted via LFI at /home/mowree/.ssh/id_rsa. The key is passphrase protected — converted with ssh2john, cracked with John the Ripper revealing passphrase unicorn, and used to SSH into the machine. Privilege escalation exploits world-writable /etc/passwd to insert a crafted root-level user entry.
+
+- **Ports:**   22 (SSH), 80 (HTTP - Apache, blank page)
+- **Exploit:**  Gobuster with -x php → evil.php → LFI via ?command= parameter → /etc/passwd user enumeration → /home/mowree/.ssh/id_rsa extraction → ssh2john + John the Ripper → passphrase unicorn → SSH access as mowree
+- **PrivEsc:** World-writable /etc/passwd → crafted root user entry inserted → switched to injected user → root shell
+  
+---
+
 ## 📌 About PG Play
 
 OffSec Proving Grounds Play is a **free** lab platform by Offensive Security. All machines are sourced from the VulnHub community and hosted on the OffSec platform — meaning no local VM setup required, just VPN in and hack.
@@ -246,7 +257,7 @@ OffSec Proving Grounds Play is a **free** lab platform by Offensive Security. Al
 
 Working through 32 machines from the official OffSec PG Play playlist (49 total — 12 skipped as too similar to previously completed machines, 5 excluded as newer additions):
 
-### ✅ Completed (16/32)
+### ✅ Completed (17/32)
 
 | Machine | Difficulty | Key Techniques |
 |---------|------------|----------------|
@@ -266,6 +277,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 | [DC-4](./DC-4) | Intermediate | Command Injection |
 | [NoName](./NoName) | Intermediate | Web exploitation |
 | [Blogger-1](./BLOGGER) | Intermediate | WordPress exploitation |
+| [EvilBox-One](./EVILBOX1) | Easy | Web, chaining techniques |
 
 ---
 
@@ -281,7 +293,7 @@ Working through 32 machines from the official OffSec PG Play playlist (49 total 
 | [NoName](./NoName) | Easy | ✅ Done | Web exploitation |
 | Wpwn | Easy | ⏳ Pending | WordPress, privesc chain |
 | BBSCute | Easy | ⏳ Pending | BBS exploitation |
-| EvilBox-One | Easy | ⏳ Pending | Web, chaining techniques |
+| EvilBox-One | Easy | ✅ Done | Web, chaining techniques |
 | Dawn | Easy | ⏳ Pending | Service exploitation |
 
 ---
